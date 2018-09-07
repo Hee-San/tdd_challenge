@@ -3,14 +3,22 @@ from io import StringIO
 from ex3 import Address
 
 class TestAddress(unittest.TestCase):
-    def test_validate_addr_spec(self):
-        A1_tests = {'@\n':'ok',
-                    'hoge@piyo.com\n':'ok',
-                    'hogehoge\n':'ng',
-                    'hoge@hoge@fuga\n':'ng'
-                    }
+    def test_A1_validate_addr_spec(self):
+        self.tests = {'@\n':'ok',
+                'hoge@piyo.com\n':'ok',
+                'hogehoge\n':'ng',
+                'hoge@hoge@fuga\n':'ng'
+                }
 
-        for _in, _out in A1_tests.items():
+    def test_D1_validate_addr_spec(self):
+        self.tests = {'@\n':'ok',
+                'oge@piyo.com\n':'ok',
+                'ogehoge\n':'ng',
+                'oge@hoge@fuga\n':'ng'
+                }
+
+    def tearDown(self):
+        for _in, _out in self.tests.items():
             _stdin = StringIO(_in)
             _stdout = StringIO()
             address = Address(_stdin, _stdout)
