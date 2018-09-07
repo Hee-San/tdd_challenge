@@ -1,6 +1,6 @@
 # TDD Challenge 2018!
 Let's TDD!!!
-よろしく！
+よろしく！onegaishimasu!
 # 動作環境について
 Python3 での動作を想定しています。
 
