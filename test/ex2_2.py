@@ -9,7 +9,8 @@ class TestPrice(unittest.TestCase):
         tests = {"10\n": "11\n",
                  "10,12\n": "24\n",
                  "10,12\n40,16\n": "24\n62\n",
-                 "10,12\n\n40,16\n": "24\n0\n62\n"
+                 "10,12\n\n40,16\n": "24\n0\n62\n",
+                 "10,12\n\n40,16\n\n": "24\n0\n62\n0\n"
                 }
 
         for _in, _out in tests.items():

@@ -11,7 +11,9 @@ class Price:
         self._output = o
 
     def calc_price(self):
-        for line in self._input.read().strip().split('\n'):
+        lines = self._input.read().split('\n')
+        lines = lines[0:-1]
+        for line in lines:
             if line == '':
                 self._output.write('0\n')
                 continue
