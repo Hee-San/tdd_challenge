@@ -11,9 +11,13 @@ class Price:
         self._output = o
 
     def calc_price(self):
-        prices = list(map(int, (self._input.read().split(','))))
-        ans = my_round(sum(prices) * 1.1)
-        self._output.write(str(ans))
+        for line in self._input.read().strip().split('\n'):
+            if line == '':
+                self._output.write('0\n')
+                continue
+            prices = list(map(int, (line.split(','))))
+            ans = my_round(sum(prices) * 1.1)
+            self._output.write(str(ans)+'\n')
         return 0
 
 
